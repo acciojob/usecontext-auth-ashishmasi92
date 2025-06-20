@@ -10,8 +10,12 @@ const App = () => {
 
     <div>
        <h1>Click on the Checkbox to get Authenticated</h1>
-       <p>{isAuthenticated==true?"you are now authenticate, you can processd,":"you are not authenticate"}</p>
-    <input type="checkbox" name="checkbox" onClick={(e)=>{
+       <p className="authText">
+        {isAuthenticated
+          ? "You are authenticated"
+          : "You are not authenticated"}
+      </p>
+    <input type="checkbox" name="checkbox" id="AuthToggle" onChange={(e)=>{
       setIsAuthenticated(e.target.checked)
     }} />
     <label>I'm not a robot</label>
